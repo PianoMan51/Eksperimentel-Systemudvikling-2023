@@ -1,0 +1,27 @@
+#venteliste li {
+    padding: 5px 10px;
+    background-color: var(--blue);
+    margin: auto;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    margin-bottom: 8px;
+    color: white;
+    transition: 0.25s ease-out;
+}
+
+#venteliste li:hover {
+    cursor: default;
+    background-color: var(--darkblue);
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.29);
+}
+
+#venteliste li button {
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}

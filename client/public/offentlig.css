@@ -1,0 +1,155 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    --background: #34495e;
+    font-family: Arial, Helvetica, sans-serif;
+    --green: #2ecc71;
+    --darkgreen: #27ae60;
+    --yellow: #f1c40f;
+    --red: #e74c3c;
+    --lightgray: #ecf0f1;
+    --gray: #bdc3c7;
+    --blue: #3498db; 
+    --darkblue: #2980b9;
+    --sizeBox: calc(225px + var(--sizeBoxInner));
+    --sizeBoxInner: 320px;
+}
+
+#backgroundClouds {
+    position:fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+    z-index: -1;
+}
+
+#main {
+    margin-top: 120px;
+    background-color: white;
+    padding: 0px 20px;
+    width: 50%;
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+#offentligVenteliste {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    height: var(--sizeBoxInner);
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    background-color: var(--lightgray);
+    border-radius: 20px;
+}
+
+#listContainer h1 {
+    color: var(--blue);
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+#main{
+    height: var(--sizeBox);
+}
+
+#offentligVenteliste li {
+    padding: 5px 10px;
+    background-color: var(--blue);
+    margin: 5px;
+    border-radius: 7px;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+    transition: 0.25s ease-out;
+    list-style-type: none;
+}
+
+#offentligVenteliste ul {
+    margin: 0;
+    padding: 0;
+}
+
+#offentligVenteliste::-webkit-scrollbar {
+    display: none;
+}
+
+#offentligVenteliste li:hover {
+    background-color: var(--darkblue);
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.29);
+    cursor: default;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: larger;
+}
+
+#phoneInput::-webkit-outer-spin-button,
+#phoneInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#admin {
+    position: absolute;
+    right: 15;
+    bottom: 15;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--background);
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#admin:hover {
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.35);
+}
+
+body{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+
+#buttonTilmeld{
+    margin-left: calc(50% - 80px) ;
+    width: 160px;
+    height: 45px;
+    font-size: 16px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transform: scale(1);
+    transition: 0.25s ease-out;
+    cursor: pointer;
+}
+
+#buttonTilmeld:hover{
+    margin-left: calc(50% - 82px);
+    transform: scale(1.1);
+    transition: 0.25s ease-out;
+    background-color: var(--darkblue);
+    cursor: pointer;
+}

@@ -1,0 +1,219 @@
+<html>
+
+
+
+<header>
+    <link rel="stylesheet" href="venteliste.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d66dd0368f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+</header>
+
+
+<body id="body">
+    <div id="main">
+        <div id="container">
+
+            <div id="listContainer">
+
+                <h1><a href="/adminList" style="text-decoration: none;" id="oldhojenh1">Oldhojen.dk</a></h1>
+
+                <ul id="menubar">
+                    <a href="/adminList">Venteliste</a>
+                    <a href="/internVenteliste">Intern venteliste</a>
+                    <a href="/ansogere">Ansøgere</a>
+                    <a href="/haveejere">Haveejere</a>
+                </ul>
+
+                <div id="inputs">
+                    <i class="fa-regular fa-user fa-2xl" id="inputsIcon"></i>
+                    <span class="span" style="color: white; text-align: center; letter-spacing: 2px; padding: 10px">Tilføj ny
+                        kolonist</span>
+                    <input id="nameInput" placeholder="Navn" oninput="checkIfAllInfoAdded()">
+                    <input id="phoneInput" placeholder="Tlf." oninput="checkIfAllInfoAdded()">
+                    <input id="mailInput" placeholder="Email" oninput="checkIfAllInfoAdded()">
+                    <input id="dateInput" type="date" min="1900-01-01" max="2058-12-31">
+                    <button id="addButton"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                <div id="moveKolonist">
+                    <i class="fa-solid fa-house-chimney-user fa-2xl" id="moveKolonistIcon"></i>
+                    <span id="moveKolonistHeader" style="color: white; text-align: center; letter-spacing: 2px; padding: 10px">Flyt kolonist til
+                        haveejere</span>
+                    <input id="moveNameInput" placeholder="name">
+                    <input id="movePhoneInput" placeholder="Tlf.nr">
+                    <input id="moveMailInput" placeholder="mail">
+                    <input id="moveCurrentInput" placeholder="Husnr.">
+                    <input id="movePriceInput" placeholder="Pris">
+
+                    <button id="moveButton"><i class="fa-solid fa-plus"></i></button>
+
+                </div>
+
+                <div id="buttons">
+                    <div id="addNew" title="Tilføj ny person til ventelisten">
+                        <button id="showInputsBtn"><i class="fa-solid fa-plus"></i></button>
+                        <span style="font-family: 'Nunito', sans-serif;" id="tilfojKolonist">Tilføj kolonist</span>
+                    </div>
+                    <div id="searchKolonist" title="Søg efter en person på ventelisten">
+                        <span id="searchPopUpText" style="font-family: 'Nunito', sans-serif;">Søg kolonist</span>
+                        <button id="showSearchBtn"><i class="fa-solid fa-magnifying-glass"
+                                style="color: var(--background);"></i></button>
+                    </div>
+                </div>
+
+                <div id="søgDiv">
+                    <input placeholder="Søg efter en person" id="søgNavn" onkeyup="searchPerson()">
+                </div>
+
+                <h3>Venteliste</h3>
+
+                <div id="createMailContainer">
+                    <i class="fa-solid fa-envelope-open-text fa-2xl" id="createMailContainerIcon"></i>
+                    <span style="text-align: center; letter-spacing: 2px; color: white">Mail-skabeloner</span>
+                    <div id="mailOptions">
+                        <div class="mailOptions">
+                            <button id="mailOptions0"><i class="fa-solid fa-sack-dollar fa-2xl"
+                                    style="color: #ffffff;"></i></button>
+                            <span style="font-family: 'Nunito', sans-serif;">Har betalt</span>
+                        </div>
+                        <div class="mailOptions">
+                            <button id="mailOptions1"><i class="fa-solid fa-sack-xmark fa-2xl"
+                                    style="color: #ffffff;"></i></button>
+                            <span style="font-family: 'Nunito', sans-serif;">Har ikke betalt</span>
+                        </div>
+                        <div class="mailOptions">
+                            <button id="mailOptions2"><i class="fa-regular fa-bell fa-2xl"
+                                    style="color: #ffffff;"></i></button>
+                            <span style="font-family: 'Nunito', sans-serif;">Reminder</span>
+                        </div>
+                        <div class="mailOptions">
+                            <button id="mailOptions3"><i class="fa-solid fa-person-shelter fa-2xl"
+                                    style="color: #ffffff;"></i></button>
+                            <span style="font-family: 'Nunito', sans-serif;">Have-salg</span>
+                        </div>
+                    </div>
+
+                    <span id="recieverCount"></span>
+
+                    <div id="textArea" style="position: relative">
+                        <input id="subjectInput" placeholder="Emne" style="font-family: monospace" oninput="checkSave()">
+                        <textarea id="mailTextInput" placeholder="Tekst..." oninput="checkSave()"></textarea>
+
+                        <div style="position: absolute; right: 10px; bottom: 0px;">
+                            <span class="huskSave">Husk at gem</span>
+                            <button id="templateSaveBtn"><i class="fa-regular fa-floppy-disk fa-xl"></i></button>
+                        </div>
+                    </div>
+                    <button id="sendMailButton">
+                        <div id="mailLoader" class="loader" style="display: none;"></div>
+                        <i class="fa-solid fa-paper-plane" id="sendMailIcon"></i>
+                    </button>
+                </div>
+
+                <div id="prompt" style="width: 300px; top: 50%">
+                    <span style="text-align: center; letter-spacing: 2px; color: white; margin: 20px 0px 50px 0px;">Slet
+                        ikke betalende</span>
+                    <div id="rememberMail">
+                        <span>Har du husket at sende mail?</span>
+                        <div style="display: flex">
+                            <button id="rememberYes" onclick="rememberMailAnswer(event)" class="rememberBtn"><i
+                                    class="fa-solid fa-circle-check fa-2xl"></i></button>
+                            <button id="rememberNo" onclick="rememberMailAnswer(event)" class="rememberBtn"><i 
+                                class="fa-regular fa-circle-xmark fa-2xl"></i></button>
+                        </div>
+                    </div>
+                    <div id="moveAndDelete">
+                        <div style="display:flex; justify-content: space-around; width: 90%;">
+                            <div id="promptRemove">
+                                <i class="fa-solid fa-sack-xmark fa-2xl" style="color: #ffffff;"></i>
+                                <span>Har ikke betalt</span>
+                                <ul id="removeNonchecked" class="promptAnsogere"></ul>
+                                <span style="margin-top: 0px; margin-bottom: 10px">Slet</span>
+                                <button class="moveAndDeleteBtns" onclick="removeNonchecked()"><i
+                                        class="fa-solid fa-trash fa-xl"></i></button>
+                            </div>
+                        </div>
+                        <div style="position: relative; display: flex; flex-direction: column; align-items: center;">
+                            <span id="promptDoneSpan" style="top: 10">Færdig</span>
+                            <button id="promptDone" style="margin-top: 40px;"><i class="fa-solid fa-check fa-2xl"
+                                    style="color: #ffffff;"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="containerVenteliste">
+                    <ol id="venteliste">
+                    </ol>
+                </div>
+
+            </div>
+
+            <div id="bottomBtns">
+                <div class="bottomBtn">
+                    <span class="span">Send mail</span>
+                    <button id="createMail" class="bottomBtns"><i class="fa-solid fa-envelope"
+                            style="color: #ffffff;"></i></button>
+                </div>
+                <div class="bottomBtn">
+                    <span class="span">Har betalt</span>
+                    <div style="display: flex; flex-direction: column; align-items: center; position: relative">
+                        <button id="check" class="bottomBtns"><i class="fa-solid fa-sack-dollar"
+                                style="color: #ffffff;"></i></button>
+                        <div id="checksAmounts" style="margin-top: 5px">
+                            <div class="checksDiv">
+                                <button style="background-color: transparent; color: #2ecc71"><i
+                                        class="fa-solid fa-circle-check fa-xl" id="checkAll"></i></button>
+                                <span id="checkedAmount"></span>
+                            </div>
+                            <div class="checksDiv">
+                                <button style="background-color: transparent; color: #3498db"><i
+                                        class="fa-regular fa-circle-check fa-xl" id="nonCheckAll"></i></button>
+                                <span id="noncheckedAmount"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomBtn">
+                    <span class="span">Rediger kolonist</span>
+                    <button id="bottomEdit" class="bottomBtns"><i class="fa-solid fa-pencil"
+                            style="color: #ffffff;"></i></button>
+                </div>
+                <div class="bottomBtn">
+                    <span class="span">Færdig med redigering</span>
+                    <button id="doneEdit" class="bottomBtns" style="display: none; background-color: var(--yellow);"><i
+                            class="fa-solid fa-check" style="color: #ffffff;"></i></button>
+                </div>
+                <div class="bottomBtn">
+                    <span class="span">Flyt til haveejere</span>
+                    <button id="bottomMove" class="bottomBtns"><i class="fa-solid fa-reply"
+                            style="color: #ffffff;"></i></button>
+                </div>
+                <div class="bottomBtn">
+                    <span class="span">Slet ikke betalende</span>
+                    <button id="bottomDelete" class="bottomBtns" style="display: none; background-color: var(--red);"><i
+                            class="fa-regular fa-trash-can" style="color: #ffffff; "></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <button id="public">
+        <a href="/" target="_blank">
+            <i class="fa-solid fa-people-group" style="color: #34495e;">
+            </i>
+        </a>
+    </button>
+
+    <script type="text/javascript" src="venteliste.js">
+    </script>
+    <script type="text/javascript" src="script.js">
+    </script>
+
+</body>
+
+
+</html>

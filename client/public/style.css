@@ -1,0 +1,696 @@
+:root {
+    --background: #34495e;
+    --darkbackground: #2c3e50;
+    font-family: Arial, Helvetica, sans-serif;
+    --green: #2ecc71;
+    --darkgreen: #27ae60;
+    --yellow: #f1c40f;
+    --darkyellow: #f39c12;
+    --red: #e74c3c;
+    --darkred: #c0392b;
+    --lightgray: #ecf0f1;
+    --gray: #bdc3c7;
+    --blue: #3498db;
+    --darkblue: #2980b9;
+}
+
+#venteliste {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    height: 40%;
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    background-color: var(--lightgray);
+    border: 2px var(--lightgray) solid;
+    border-radius: 20px;
+}
+
+#venteliste ul {
+    margin: 0;
+    padding: 0;
+}
+
+#venteliste li {
+    padding: 10px 10px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+#venteliste::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#main {
+    background-color: white;
+    width: 60%;
+    border-radius: 15px;
+    min-width: 1000px;
+    padding: 0px 20px;
+    height: 97%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#menubar {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 3px solid var(--background);
+}
+
+body {
+    background-color: var(--background)
+}
+
+#menubar a {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--background);
+    font-weight: bolder;
+    letter-spacing: 0px;
+    transition: letter-spacing 0.3s;
+}
+
+#deleteButton {
+    background-color: var(--red);
+}
+
+#editButton {
+    background-color: var(--yellow);
+}
+
+#menubar a:hover {
+    letter-spacing: 2px;
+}
+
+#public {
+    position: absolute;
+    right: 15;
+    bottom: 15;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--background);
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#public:hover {
+    background-color: var(--lightgray);
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.35);
+}
+
+#oldhojenh1 {
+    color: var(--background);
+    font-size: 30px;
+    padding-top: 30px;
+    margin-bottom: 0;
+    width: 200px;
+}
+
+#listContainer h3 {
+    letter-spacing: 3px;
+    color: var(--background);
+    text-align: center;
+    margin-top: 0;
+}
+
+#listContainer {
+    position: relative;
+    padding-top: 20px;
+}
+
+#søgDiv {
+    display: none;
+    position: absolute;
+    right: 60px;
+    top: 176px;
+    background-color: var(--gray);
+    height: 40px;
+    padding: 0px 7.5px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    bottom: -150;
+}
+
+#søgDiv input {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+#søgDiv input::placeholder {
+    color: white;
+    font-style: italic;
+    opacity: .5;
+}
+
+#søgDiv input:first-child {
+    border-radius: 12.5px 0px 0px 12.5px;
+    padding: 5px 10px 5px 30px;
+}
+
+#inputs {
+    background-color: var(--blue);
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%);
+    width: 30%;
+    height: 50%;
+    display: none;
+    padding: 15px;
+    padding-top: 40px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 4px solid var(--darkblue);
+    z-index: 1;
+}
+
+#inputs input {
+    margin: 5px;
+    padding: 10px 5px;
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+#inputs input::placeholder {
+    text-align: center;
+    font-style: italic;
+    color: white;
+    opacity: .5;
+}
+
+#inputsIcon {
+    text-align: center;
+    color: white;
+    height: 40px;
+}
+
+#showInputsBtn {
+    background-color: var(--green);
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: x-large;
+    transition: 0.2s ease-out;
+}
+
+#showInputsBtn:hover {
+    background-color: var(--darkgreen);
+}
+
+#addNew {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#addNew span {
+    position: absolute;
+    left: -50%;
+    transition: 0.3s ease;
+    z-index: -2;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+#addNew:hover span {
+    left: 50;
+    z-index: 2;
+    opacity: 1;
+}
+
+#searchKolonist {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchKolonist span {
+    display: block;
+    position: absolute;
+    left: -50%;
+    transition: 0.3s ease;
+    z-index: -2;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    margin-right: 20px;
+}
+
+#searchKolonist:hover span {
+    left: -350%;
+    z-index: 2;
+    opacity: 1;
+}
+
+#showSearchBtn {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: x-large;
+}
+
+#showSearchBtn:hover {
+    background-color: var(--gray);
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+#checkLabel .fa-solid {
+    height: 20px;
+    width: 20px;
+}
+
+#buttonsEl {
+    display: flex;
+}
+
+#buttonsEl button {
+    margin-left: 10px;
+}
+
+#addButton {
+    cursor: pointer;
+    border: none;
+    font-size: larger;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    transition: 0.2s;
+    transform: scale(1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+#addButton:hover {
+    transition: 0.2s;
+}
+
+#tilfojKolonist {
+    display: block;
+}
+
+#bottomBtns {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+.bottomBtn .span {
+    position: absolute;
+    display: none;
+    top: -25px;
+    white-space: nowrap;
+    font-family: 'Nunito', sans-serif;
+}
+
+.bottomBtns {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--background);
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: 0.2s;
+}
+
+#bottomBtns button:hover {
+    background-color: var(--darkbackground);
+    transition: 0.25s;
+    scale: 1.1;
+}
+
+.bottomBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checksDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checksDiv span {
+    width: 20px;
+    white-space: nowrap;
+    font-family: 'Nunito', sans-serif;
+    font-size: smaller;
+    cursor: default;
+}
+
+.checksDiv button {
+    margin: 0px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#sendMailButton {
+    cursor: pointer;
+    border: none;
+    font-size: larger;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    text-align: center;
+    transition: 0.2s;
+    margin: 10px auto 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition: 0.25s ease-out;
+}
+
+#sendMailButton:hover {
+    transform: scale(1.2);
+    transition: 0.25s ease-out;
+}
+
+#mailContainerIcon,
+#moveKolonistIcon,
+#createMailContainerIcon {
+    text-align: center;
+    color: white;
+    height: 40px;
+    padding-top: 15px;
+}
+
+#recieverCount {
+    margin: 10px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    opacity: 0.5;
+    font-size: small;
+}
+
+#createMailContainer {
+    background-color: var(--darkbackground);
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%);
+    display: none;
+    padding: 20px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+#createMailContainer textarea {
+    resize: none;
+    border: none;
+    background-color: var(--lightgray);
+    margin: 5px 10px;
+    padding: 5px;
+    height: 170px;
+    width: 600px;
+}
+
+#mailOptions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.mailOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.mailOptions button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.mailOptions span {
+    margin-top: 20px;
+    color: white;
+    letter-spacing: 1.5px;
+}
+
+.mailOptions i {
+    transform: scale(1);
+    transition: 0.25s ease-out;
+}
+
+.mailOptions i:hover {
+    transform: scale(1.2);
+    transition: 0.25s ease-out;
+}
+
+#textArea {
+    text-align: center;
+}
+
+#textArea input {
+    width: 600px;
+    border: none;
+    background-color: var(--lightgray);
+    margin: 5px 10px;
+    padding: 5px;
+}
+
+#templateSaveBtn {
+    height: 40px;
+    width: 40px;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    background-color: var(--darkblue);
+    cursor: pointer;
+    margin: 10px;
+    opacity: 0.3;
+}
+
+.huskSave {
+    opacity: 0;
+}
+
+.loader {
+    display: flex;
+    border: 4px solid white;
+    border-left-color: transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: spin89345 1s linear infinite;
+    margin: 0px;
+}
+
+@keyframes spin89345 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#prompt {
+    background-color: var(--darkbackground);
+    position: absolute;
+    top: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%);
+    display: none;
+    padding: 20px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+#rememberMail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    height: 100px;
+}
+
+.rememberBtn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    height: 40px;
+    width: 40px;
+    transform: scale(1);
+    transition: 0.25s ease-out;
+    cursor: pointer;
+}
+
+.rememberBtn:hover {
+    transform: scale(1.3);
+    transition: 0.25s ease-out;
+}
+
+#moveAndDelete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.promptAnsogere {
+    width: 250px;
+    height: 200px;
+    background-color: var(--background);
+    padding: 0;
+    overflow-y: scroll;
+    padding: 5px
+}
+
+.promptAnsogere li {
+    list-style: none;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.moveAndDeleteBtns {
+    height: 45px;
+    width: 45px;
+    color: white;
+    border: 2px solid white;
+    background-color: var(--darkbackground);
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.25s ease-out;
+}
+
+.moveAndDeleteBtns:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    transition: 0.25s ease-out;
+}
+
+.moveAndDeleteBtns:active {
+    background-color: white;
+    color: var(--darkbackground);
+}
+
+.promptAnsogere {
+    margin: 20px;
+    margin-top: 5px;
+}
+
+#promptMove,
+#promptRemove {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#promptMove span,
+#promptRemove span {
+    margin-top: 30px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+#promptDone {
+    border: none;
+    background-color: var(--background);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.25s ease-out;
+}
+
+#promptDoneSpan {
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    position: absolute;
+    top: -40px
+}
+
+#promptDone:hover {
+    transform: scale(1.2);
+    transition: 0.25s ease-out;
+}

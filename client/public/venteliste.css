@@ -1,0 +1,117 @@
+
+#buttonTilmeld{
+    margin-left: calc(50% - 60px) ;
+    width: 130px;
+    height: 45px;
+    font-size: 18px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+#buttonTilmeld:hover{
+    margin-left: calc(50% - 62px) ;
+    width: 135px;
+    height: 48px;
+    background-color: var(--darkblue); 
+}
+
+
+
+.notchecked {
+    padding: 5px 10px;
+    background-color: var(--blue);
+    margin: auto;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.25s ease-out;
+}
+
+.checked {
+    padding: 5px 10px;
+    background-color: var(--green);
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.25s ease-out;
+}
+
+#venteliste li:hover {
+    cursor: default;
+}
+
+.notchecked:hover {
+    background-color: var(--darkblue);
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.29);
+}
+
+.checked:hover {
+    background-color: var(--darkgreen);
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.29);
+}
+
+#venteliste li button {
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#moveKolonist {
+    background-color: var(--blue);
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%);
+    width: 30%;
+    display: none;
+    padding: 15px;
+    padding-top: 40px;
+    border-radius: 15px;
+    border: 4px solid var(--darkblue);
+    margin-top: 10px;
+    bottom: -5;
+    z-index: 1;
+}
+
+#moveKolonist input {
+    margin: 5px;
+    padding: 10px 5px;
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+#moveKolonist input::placeholder {
+    color: white;
+    opacity: .5;
+    font-style: italic;
+}
+
+#moveButton {
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: larger;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    transition: 0.2s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#moveButton:hover {
+    transform: scale(1.3);
+    transition: 0.2s;
+}
