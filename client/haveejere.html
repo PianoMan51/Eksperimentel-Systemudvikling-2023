@@ -3,6 +3,7 @@
 
 
 <header>
+    <title>Admin haveejere</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/d66dd0368f.js" crossorigin="anonymous"></script>
@@ -29,12 +30,15 @@
                 <div id="inputs" style="height: 400px">
                     <i class="fa-regular fa-user fa-2xl" id="inputsIcon"></i>
                     <input id="nameInput" placeholder="Navn" oninput="checkIfAllInfoAdded()">
-                    <input id="phoneInput" placeholder="Tlf." type="number" maxlength="8" oninput="checkIfAllInfoAdded()">
+                    <input id="phoneInput" placeholder="Tlf." type="number" maxlength="8"
+                        oninput="checkIfAllInfoAdded()">
                     <input id="mailInput" placeholder="Email" oninput="checkIfAllInfoAdded()">
                     <input id="houseNrInput" placeholder="Nr." oninput="checkIfAllInfoAdded()">
                     <div>
-                        <input style="width: 46%; display: inline-block;" id="yearsInput" placeholder="Ventetid i år" oninput="checkIfAllInfoAdded()">
-                        <input style="width: 46%; float: right;" id="monthsInput" placeholder="Ventetid i mdr." oninput="checkIfAllInfoAdded()">
+                        <input style="width: 46%; display: inline-block;" id="yearsInput" placeholder="Ventetid i år"
+                            oninput="checkIfAllInfoAdded()">
+                        <input style="width: 46%; float: right;" id="monthsInput" placeholder="Ventetid i mdr."
+                            oninput="checkIfAllInfoAdded()">
                     </div>
                     <input id="priceInput" placeholder="Pris" oninput="checkIfAllInfoAdded()">
                     <button id="addButton"><i class="fa-solid fa-plus"></i></button>
@@ -70,7 +74,8 @@
                     <span id="recieverCount"></span>
 
                     <div id="textArea" style="position: relative">
-                        <input id="subjectInput" placeholder="Emne" style="font-family: monospace" oninput="checkSave()">
+                        <input id="subjectInput" placeholder="Emne" style="font-family: monospace"
+                            oninput="checkSave()">
                         <textarea id="mailTextInput" placeholder="Tekst..." oninput="checkSave()"></textarea>
 
                         <div style="position: absolute; right: 10px; bottom: 0px;">
@@ -105,7 +110,8 @@
                     </div>
                     <div class="bottomBtn">
                         <span class="span">Færdig med redigering</span>
-                        <button id="doneEdit" class="bottomBtns" style="display: none; background-color: var(--yellow);"><i class="fa-solid fa-check"
+                        <button id="doneEdit" class="bottomBtns"
+                            style="display: none; background-color: var(--yellow);"><i class="fa-solid fa-check"
                                 style="color: #ffffff;"></i></button>
                     </div>
                     <div class="bottomBtn">
@@ -115,7 +121,8 @@
                     </div>
                     <div class="bottomBtn">
                         <span class="span">Færdig</span>
-                        <button style="display: none; background-color: var(--red);" id="doneDelete" class="bottomBtns"><i class="fa-solid fa-trash-can fa-beat"
+                        <button style="display: none; background-color: var(--red);" id="doneDelete"
+                            class="bottomBtns"><i class="fa-solid fa-trash-can fa-beat"
                                 style="color: #ffffff;"></i></button>
                     </div>
                 </div>
