@@ -5,7 +5,7 @@ This project is from the course "Exponentiel System-development", which is in th
 Together with two fellow students, I established partnership with a local community garden association, 
 where we together developed a system for them to improve their administrative handling of the 'waiting list'. 
 
-## Abstract of the assignment done by me and my group
+### Abstract of the assignment done by me and my group
 
 This report presents the development and implementation of a waiting list management
 system for a local community garden association. The existing system utilized Excel
@@ -29,12 +29,16 @@ making it easier to get an overview of the waiting process.
 
 
 ![Public_page](images/Public_page.png)
+*The public view of the waitinglist, where applicants are able to sign up*
 
 ![Admin_list](images/Admin_list.png)
+*The admin-view of the waiting list. Admin can manage applicants, edit data and send emails collectively*
 
 ![Admin_list-check](images/Admin_list-check.png)
+*Able to group applicants based on yearly paid contingent*
 
 ![Admin_mailing](images/Admin_mailing.png)
+*Mailing system*
 
 
 For running this projects, you might have to *npm install express*
