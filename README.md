@@ -1,6 +1,11 @@
 # Eksys2023
 
-# npm install express
+This project is from the course "Exponentiel System-development", which is in the third semester of IT Product-development.
+
+Together with two fellow students, I established partnership with a local community garden association, 
+where we together developed a system for them to improve their administrative handling of the 'waiting list'. 
+
+## Abstract of the assignment done by me and my group
 
 This report presents the development and implementation of a waiting list management
 system for a local community garden association. The existing system utilized Excel
@@ -21,3 +26,15 @@ previously done in various programs, into one service. Our application manages a
 different lists of applicants with a simple mailing system that instantly contacts the different
 groups using a specified template. It also serves as a public waiting list for potential applicants,
 making it easier to get an overview of the waiting process.
+
+
+![Public_page](images/Public_page.png)
+
+![Admin_list](images/Admin_list.png)
+
+![Admin_list-check](images/Admin_list-check.png)
+
+![Admin_mailing](images/Admin_mailing.png)
+
+
+For running this projects, you might have to *npm install express*
